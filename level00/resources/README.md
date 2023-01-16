@@ -21,11 +21,11 @@ su: Authentication failure
 Online tools exist such as [**Dcode**](https://www.dcode.fr/cipher-identifier) to help **cypher identification** and decryption. The tool suggests looking at several cyphers, so we try the first suggestion, the **ROT** cypher tool.
 
 
-![[Level00_dcode-identifier.png]]
+![Dcode Identifier](Level00_dcode-identifier.png)
 
 **ROT** cypher is a simple method of cyphering that consists of rotating letters of the alphabet by **N** places. For example with **N = 13**, the letter **A** becomes **N**, **B** becomes **O** and so on.
 
-![[Level00_dcode-ROT-bruteforcer.png]]
+![Dcode ROT Bruteforcer](Level00_dcode-ROT-bruteforcer.png)
 
 Results of the **ROT** bruteforcer of [**Dcode**](https://www.dcode.fr/rot-cipher) gives us an interesting result where **N = 15**. By applying this cypher to the token `cdiiddwpgswtgt`, it gives us out the token `nottoohardhere` wich is the only human readable result.
 

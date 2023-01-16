@@ -29,11 +29,11 @@ level02.pcap                                                      100% 8302     
 ## Analysis with Wireshark
 When opening the file, we can notice that there are two IP addresses `59.233.235.218` and `59.233.235.223`.
 
-![[Level02_PCAP-with-wireshark.png]]
+![PCAP with Wireshark](Level02_PCAP-with-wireshark.png)
 
 To see a bit more clearly what is happening, we can right click on the packet list and choose **Follow > TCP Stream** from the contextual menu. This will show us the data flow between the IP's.
 
-![[Level02_TCP-stream.png]]
+![Wireshark TCP stream](Level02_TCP-stream.png)
 
 It seems that at a certain point, a **password is prompted** for login in **blue** and the password `ft_wandr...NDRel.L0L` is typed in **red** by the user. By default the stream is shown in **ASCII** characters and the bytes wich are not printable are represented by dots.
 
@@ -41,7 +41,7 @@ Let's try to filter out the user's input and transform those bytes in hex format
 
 When comparing the bytes represented by dots against the **ASCII** table, we can find out that `7f` represents the `DEL` character and `0d` represents the `CR` carriage return character.
 
-![[Level02_TCP-stream-filtered-hexdump.png]]
+![Wireshark TCP stream filtered](Level02_TCP-stream-filtered-hexdump.png)
 
 We have deducted that the password entered and is submited by the `CR` character. The password has been entered wrongly and the user as pressed the `DEL` key several times to correct it.
 
